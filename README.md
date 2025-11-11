@@ -17,8 +17,14 @@ cd ldclient_amd64_v1.0.0
 
 4. Заменяем конфигурацию-заглушку config.bin в папке etc на выданную ботом
 
-5. Запускаем программу
+5. Запускаем установку сервиса
 
 ```bash
-sudo ./ldclient_amd64.bin
+sudo ./ldclient.bin --install
+```
+
+6. Если возникае необходимость обновить ПО запускаем
+
+```bash
+sudo ./ldclient.bin --update --version Новая_Версия --arch Архитектура
 ```
