@@ -6,7 +6,7 @@
 wget https://github.com/fridalif/light-defender-client-releases/releases/download/v1.0.0/ldclient_amd64_v1.0.0.zip
 ```
 
-2. Разархивируем саачанный файл
+2. Разархивируем скачанный файл
 
 ```bash
 unzip ldclient_amd64_v1.0.0.zip
