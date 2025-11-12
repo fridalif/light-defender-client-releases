@@ -23,8 +23,11 @@ cd ldclient_amd64_v1.0.0
 sudo ./ldclient.bin --install
 ```
 
-6. Если возникае необходимость обновить ПО запускаем
+6. Если возникает необходимость обновить ПО запускаем
 
 ```bash
-sudo ./ldclient.bin --update --version Новая_Версия --arch Архитектура
+sudo systemctl stop ldclient
+sudo mv ldclient.bin ldclient.bin.save
+sudo ./ldclient.bin.save --update --version Новая_Версия --arch Архитектура && sudo rm -rf ldclient.bin.save
+sudo systemctl start ldclient 
 ```
