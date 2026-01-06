@@ -1,21 +1,24 @@
 # Как использовать
 
-1. Скачиваем подходящую версию (для большиснтва сервером подходит amd64) далее в примерах будет рассмотрена версия v1.0.1 под amd64;
+1. Запускаем скрипт для скачивания необходимой последней релизной версии
 
 ```bash
-wget https://github.com/fridalif/light-defender-client-releases/releases/download/v1.0.1/ldclient_amd64_v1.0.1.zip
+wget -q -O - https://dashboard.light-defender.ru/load_ld.sh | bash
 ```
 
-2. Разархивируем скачанный файл
+2. Переходим в скачанную директорию
 
 ```bash
-unzip ldclient_amd64_v1.0.1.zip
-cd ldclient_amd64_v1.0.1
-```
+cd <Название_выводится_в_конце_предыдущего скрипта>
+``` 
 
 3. Получаем конфигурацию у бота https://t.me/light_defender_bot
 
-4. Заменяем конфигурацию-заглушку config.bin в папке etc на выданную ботом
+4. Загружаем конфигурацию с сервера или вручную
+
+```bash
+sudo ./ldclient --load-config
+```
 
 5. Запускаем установку сервиса
 
@@ -28,6 +31,6 @@ sudo ./ldclient.bin --install
 ```bash
 sudo systemctl stop ldclient
 sudo mv ldclient.bin ldclient.bin.save
-sudo ./ldclient.bin.save --update --version Новая_Версия --arch Архитектура && sudo rm -rf ldclient.bin.save
+sudo ./ldclient.bin.save --update && sudo rm -rf ldclient.bin.save
 sudo systemctl start ldclient 
 ```
