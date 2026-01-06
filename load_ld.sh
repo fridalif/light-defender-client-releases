@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 if command -v unzip >/dev/null 2>&1; then
     #echo "unzip уже установлен."
